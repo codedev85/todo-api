@@ -17,9 +17,9 @@ class TodoService
 
             $filter === Todo::STATUS_ALL ?
 
-            $todos = Todo::where('user_id',$user['id'])->get() :
+            $todos = Todo::where('user_id',$user['id'])->orderby('created_at','desc')->get() :
 
-            $todos = Todo::where(['user_id' => $user['id'] , 'status' => $filter])->get();
+            $todos = Todo::where(['user_id' => $user['id'] , 'status' => $filter])->orderby('created_at','desc')->get();
 
             return [
                 'status'  => true,
@@ -48,8 +48,8 @@ class TodoService
             $validateData = Validator::make($data,
                 [
                     'title' => 'required|string',
-                    'from' => 'required|datetime',
-                    'to' => 'required|datetime',
+                    'from' => 'required|date|date_format:Y-m-d',
+                    'to' => 'required|date|date_format:Y-m-d',
 
                 ]);
 

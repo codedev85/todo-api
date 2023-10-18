@@ -7,6 +7,7 @@ use App\Models\User;
 use Faker\Factory as Faker;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class TodoSeeder extends Seeder
 {
@@ -15,8 +16,15 @@ class TodoSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = User::first();
         $faker = Faker::create();
+
+        User::create([
+            'name' => $faker->name,
+            'email'=>'test@todo.com',
+            'password' => Hash::make('secret'),
+        ]);
+
+        $user = User::first();
 
         if($user){
             for($i = 0 ; $i < 20 ; $i++)
