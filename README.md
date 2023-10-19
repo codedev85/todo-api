@@ -1,15 +1,21 @@
-Todo Api Test 
+**Todo Api Test**
 
-Email : test@todo.com
+**Email:** test@todo.com
 
-Password : Secret 
+**Password:** secret 
 
-API Setup : 
+**API Setup :**
 
-Run : php artisan db:seed 
+Add Necessary Database credentials in the .env  
+
+Run : **php artisan db:seed**
 
 To create the seeded user in the db 
 
 Login in with the credentials 
 
 The email and password are provided above 
+
+**Endpoints :**
+
+Check **api.php** for endpoint
