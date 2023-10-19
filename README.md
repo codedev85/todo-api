@@ -25,7 +25,7 @@ BaseURl : Based on environmental setup , in my case its
 a localhost address **http://localhost:8000/api/v1**
 
 - Authenticate 
-- baseurl+/authenticate/authenticate
+- baseurl+/authenticate/user
   - email 
   - password
   - POST Method
